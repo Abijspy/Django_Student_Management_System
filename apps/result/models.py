@@ -20,7 +20,7 @@ class Result(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     test_score = models.IntegerField(default=0)
     exam_score = models.IntegerField(default=0)
-
+    remarks = models.TextField(blank=True)
     class Meta:
         ordering = ["subject"]
 
@@ -32,3 +32,6 @@ class Result(models.Model):
 
     def grade(self):
         return score_grade(self.total_score())
+
+    def remarks(self):
+        return f"{self.remarks}"

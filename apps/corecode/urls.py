@@ -20,6 +20,8 @@ from .views import (
     TermDeleteView,
     TermListView,
     TermUpdateView,
+    AttendanceCreateView,
+    AttendanceListView,
 )
 
 urlpatterns = [
@@ -50,6 +52,8 @@ urlpatterns = [
     path("class/<int:pk>/delete/", ClassDeleteView.as_view(), name="class-delete"),
     path("subject/list/", SubjectListView.as_view(), name="subjects"),
     path("subject/create/", SubjectCreateView.as_view(), name="subject-create"),
+    path("attendance/create",AttendanceCreateView.as_view(),name="attendance-create"),
+    path("attendance/list",AttendanceListView.as_view(),name="attendance"),
     path(
         "subject/<int:pk>/update/",
         SubjectUpdateView.as_view(),

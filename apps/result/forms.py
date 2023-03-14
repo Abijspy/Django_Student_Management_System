@@ -12,8 +12,10 @@ class CreateResults(forms.Form):
     subjects = forms.ModelMultipleChoiceField(
         queryset=Subject.objects.all(), widget=forms.CheckboxSelectMultiple
     )
+    remarks = forms.CharField(label='remarks',max_length=100, empty_value='')
 
 
 EditResults = modelformset_factory(
-    Result, fields=("test_score", "exam_score"), extra=0, can_delete=True
+    Result, fields=("test_score", "exam_score"), extra=0, can_delete=True,
+
 )

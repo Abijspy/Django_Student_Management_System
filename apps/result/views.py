@@ -96,11 +96,13 @@ class ResultListView(LoginRequiredMixin, View):
             test_total = 0
             exam_total = 0
             subjects = []
+            remarks = []
             for subject in results:
                 if subject.student == result.student:
                     subjects.append(subject)
                     test_total += subject.test_score
                     exam_total += subject.exam_score
+                    remarks.append(remarks)
 
             bulk[result.student.id] = {
                 "student": result.student,
@@ -108,6 +110,7 @@ class ResultListView(LoginRequiredMixin, View):
                 "test_total": test_total,
                 "exam_total": exam_total,
                 "total_total": test_total + exam_total,
+                "remarks": remarks,
             }
 
         context = {"results": bulk}

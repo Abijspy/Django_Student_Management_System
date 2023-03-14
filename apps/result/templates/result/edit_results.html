@@ -17,11 +17,12 @@ Update Results
         <th></th>
         <th>Name</th>
         <th>Subject</th>
-        <th>Test Score</th>
-        <th>Exam Score</th>
+        <th>Term 1 Score</th>
+        <th>Term 2 Score</th>
         <th>Total</th>
-        <th>Delete</th>
+        <th>Remarks</th>
         <th>Class</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -34,9 +35,15 @@ Update Results
           <td style="width: 10%;">{{form.test_score | add_class:"form-control form-control-sm"}}</td>
           <td style="width: 10%;">{{form.exam_score | add_class:"form-control form-control-sm"}}</td>
           <td>{{form.instance.total_score}}</td>
-          <td>{{form.DELETE}}</td>
+          <td style="width: 10%;"><label for="remarks">Choose a remark:</label>
+            <select id="Remarks" name="Remarks">
+              <option value="good">Good</option>
+              <option value="better">Better</option>
+              <option value="outstanding">Outstanding</option>
+              <option value="poor performance">Poor Perforamance</option>
+            </select></td>
           <td>{{form.instance.current_class}}</td>
-
+          <td>{{form.DELETE}}</td>
         </tr>
       {% endfor %}
     </tbody>

@@ -14,6 +14,7 @@ from .forms import (
     SiteConfigForm,
     StudentClassForm,
     SubjectForm,
+    AttendanceForm,
 )
 from .models import (
     AcademicSession,
@@ -21,6 +22,7 @@ from .models import (
     SiteConfig,
     StudentClass,
     Subject,
+    Attendance,
 )
 
 
@@ -269,3 +271,14 @@ class CurrentSessionAndTermView(LoginRequiredMixin, View):
             AcademicTerm.objects.filter(name=term).update(current=True)
 
         return render(request, self.template_name, {"form": form})
+
+class AttendanceListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
+    model="Attendance"
+    success_url = reverse_lazy("Attendance")
+
+class AttendanceCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Attendance
+    form_class = AttendanceForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("Attendance")
+    success_message = "New Attendance successfully added"
