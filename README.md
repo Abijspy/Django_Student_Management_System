@@ -57,4 +57,7 @@ python manage.py test
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
+<b>See this project On researchgate: <br>
+<a href = "[https://www.researchgate.net/publication/372743093_FACE_DETECTION_EMOJI_PICKER](https://www.researchgate.net/publication/372767286_Student_Management_System_Capstone_Project)"><img src= "https://user-images.githubusercontent.com/88943869/257120030-af31d67a-74b4-4829-b9a1-4b0ef08d702b.png" width="50" height="50"></a></b>
+
 
